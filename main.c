@@ -52,8 +52,9 @@ void inflict_damage(pokemon *a, pokemon *b, int attack_number)
                     {.attack_name= "nrm4",.ep_cost=15 ,.inflict =200 ,.type =2}},
                 .ep = 100,.hp =2000 , .pok_type =1 };
 
+pokemon pokemons[50];
 
-void fill_pokemon(){
+void fill_pokemon(pokemon *pokemon_list[50]){
     printf("how many pokemons do you want (max 50) \n");
     int pok_numb;
     scanf("%d",&pok_numb);
@@ -61,17 +62,17 @@ void fill_pokemon(){
     for(int i=0; i<=pok_numb; i++){
         int numb_atk,energy_point, energy_cost;
         printf("what would you name your character \n");
-        scanf("%c",&pokemon_list[i].pok_name);
+        gets(pokemon_list[i]->pok_name);
         printf("\ngive health points \n");
-        scanf("%f",&pokemon_list[i].hp);
+        scanf("%f",&pokemon_list[i]->hp);
         printf("\ngive energy points \n");
-        scanf("%d",&pokemon_list[i].ep);
+        scanf("%d",&pokemon_list[i]->ep);
         printf("\ngive pokemon type water:0 fire:1 earth:2 wind:3  \n");
-        scanf("%d",&pokemon_list[i].pok_type);
-        printf("\nhow many attacks does %c have \n",pokemon_list[i].pok_name);
+        scanf("%d",&pokemon_list[i]->pok_type);
+        printf("\nhow many attacks does %s have \n",pokemon_list[i]->pok_name);
         scanf("%d",&numb_atk);
         printf("whats the pokemon type \n0 water\n1 fire\n2 earth\n3 wind\n ");
-        scanf("%d",pokemon_list[i].pok_type);
+        scanf("%d",pokemon_list[i]->pok_type);
         
 
 
@@ -79,13 +80,13 @@ void fill_pokemon(){
         scanf("%d",&numb_atk);
         for(int j=0; i<=pok_numb; j++){
             printf("attack name\n");
-            scanf("%c",pokemon_list[i].atk->attack_name);
+            gets(pokemon_list[i]->atk->attack_name);
             printf("attack damage type\n0 water\n1 fire\n2 earth\n3 wind");
-            scanf("%d",pokemon_list[i].atk->type);
+            scanf("%d",pokemon_list[i]->atk->type);
             printf("attack damage\n");
-            scanf("%d",pokemon_list[i].atk->inflict);
+            scanf("%d",pokemon_list[i]->atk->inflict);
             printf("attack energy cost\n");
-            scanf("%d",pokemon_list[i].atk->ep_cost);
+            scanf("%d",pokemon_list[i]->atk->ep_cost);
             
             }
 
@@ -96,9 +97,9 @@ void fill_pokemon(){
 }
 
 
-void pokemon2conf_file(){
-        
-
+void pokemon2conf_file(pokemon *pokemons){
+    
+    
 
 
 
