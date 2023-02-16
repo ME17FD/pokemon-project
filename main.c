@@ -65,12 +65,29 @@ void fill_pokemon(){
         printf("\ngive health points \n");
         scanf("%f",&pokemon_list[i].hp);
         printf("\ngive energy points \n");
-        scanf("%f",&pokemon_list[i].ep);
+        scanf("%d",&pokemon_list[i].ep);
         printf("\ngive pokemon type water:0 fire:1 earth:2 wind:3  \n");
-        scanf("%f",&pokemon_list[i].pok_type);
+        scanf("%d",&pokemon_list[i].pok_type);
         printf("\nhow many attacks does %c have \n",pokemon_list[i].pok_name);
-        scanf("%f",&numb_atk);
+        scanf("%d",&numb_atk);
+        printf("whats the pokemon type \n0 water\n1 fire\n2 earth\n3 wind\n ");
+        scanf("%d",pokemon_list[i].pok_type);
         
+
+
+        printf("how many attacks does he have\n");
+        scanf("%d",&numb_atk);
+        for(int j=0; i<=pok_numb; j++){
+            printf("attack name\n");
+            scanf("%c",pokemon_list[i].atk->attack_name);
+            printf("attack damage type\n0 water\n1 fire\n2 earth\n3 wind");
+            scanf("%d",pokemon_list[i].atk->type);
+            printf("attack damage\n");
+            scanf("%d",pokemon_list[i].atk->inflict);
+            printf("attack energy cost\n");
+            scanf("%d",pokemon_list[i].atk->ep_cost);
+            
+            }
 
     }
 
@@ -78,6 +95,17 @@ void fill_pokemon(){
 
 }
 
+
+void pokemon2conf_file(){
+        
+
+
+
+
+
+
+
+}
 
 int main(void)
 {
