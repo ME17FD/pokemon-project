@@ -39,18 +39,7 @@ void inflict_damage(pokemon *a, pokemon *b, int attack_number)
         printf("he dead");
     }
 }
-    pokemon pika = {.atk={{.attack_name= "physical",.ep_cost=10 ,.inflict =200 ,.type =4},
-                    {.attack_name= "nrm1",.ep_cost=10 ,.inflict =150 ,.type =1},
-                    {.attack_name= "nrm2",.ep_cost=15 ,.inflict =200 ,.type =1},
-                    {.attack_name= "nrm3",.ep_cost=15 ,.inflict =200 ,.type =1},
-                    {.attack_name= "nrm4",.ep_cost=15 ,.inflict =200 ,.type =1}},
-                .ep = 100,.hp =2000 , .pok_type =1 };
-    pokemon piko = {.atk={{.attack_name= "physical",.ep_cost=10 ,.inflict =200 ,.type =4},
-                    {.attack_name= "nrm1",.ep_cost=10 ,.inflict =150 ,.type =2},
-                    {.attack_name= "nrm2",.ep_cost=15 ,.inflict =200 ,.type =2},
-                    {.attack_name= "nrm3",.ep_cost=15 ,.inflict =200 ,.type =2},
-                    {.attack_name= "nrm4",.ep_cost=15 ,.inflict =200 ,.type =2}},
-                .ep = 100,.hp =2000 , .pok_type =1 };
+
 
 pokemon pokemons[50];
 
@@ -91,23 +80,44 @@ void fill_pokemon(pokemon *pokemon_list[50]){
             }
 
     }
-
-
-
 }
 
 
-void pokemon2conf_file(pokemon *pokemons){
-    
-    
+int get_pok_numb(){
 
 
-
-
-
-
+    return 0;
 }
 
+void pokemon2conf_file(pokemon *pok2f[50]){
+    FILE *pokfile;
+    pokfile =fopen("pok conf.pconf","a+");
+    fprintf(pokfile,"pok_list ={ ");
+    for (int currentpokn = 0; currentpokn < get_pok_numb(); currentpokn++){
+    fprintf(pokfile,"%s = {.pok_name=%s,.ep = %d,.hp =%f , .pok_type =%d,.atk={ ",pok2f[currentpokn]->pok_name,pok2f[currentpokn]->pok_name,pok2f[currentpokn]->ep,pok2f[currentpokn]->hp,pok2f[currentpokn]->pok_type);
+    for (int current_atk = 0; current_atk < 5; current_atk++){
+            fprintf(pokfile,"");
+        }
+    
+
+    }
+
+
+    fprintf(pokfile," }};");
+    fclose(pokfile);
+}
+    pokemon pika = {.atk={{.attack_name= "physical",.ep_cost=10 ,.inflict =200 ,.type =4},
+                    {.attack_name= "nrm1",.ep_cost=10 ,.inflict =150 ,.type =1},
+                    {.attack_name= "nrm2",.ep_cost=15 ,.inflict =200 ,.type =1},
+                    {.attack_name= "nrm3",.ep_cost=15 ,.inflict =200 ,.type =1},
+                    {.attack_name= "nrm4",.ep_cost=15 ,.inflict =200 ,.type =1}},
+                .ep = 100,.hp =2000 , .pok_type =1 };
+    pokemon piko = {.atk={{.attack_name= "physical",.ep_cost=10 ,.inflict =200 ,.type =4},
+                    {.attack_name= "nrm1",.ep_cost=10 ,.inflict =150 ,.type =2},
+                    {.attack_name= "nrm2",.ep_cost=15 ,.inflict =200 ,.type =2},
+                    {.attack_name= "nrm3",.ep_cost=15 ,.inflict =200 ,.type =2},
+                    {.attack_name= "nrm4",.ep_cost=15 ,.inflict =200 ,.type =2}},
+                .ep = 100,.hp =2000 , .pok_type =1 };
 int main(void)
 {
 
