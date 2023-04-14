@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mehdi/Documents/c_thing",
-      "program": "c:/Users/mehdi/Documents/c_thing/build/Debug/outDebug",
+      "cwd": "c:/Users/mehdi/Documents/pokemon project",
+      "program": "c:/Users/mehdi/Documents/pokemon project/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
